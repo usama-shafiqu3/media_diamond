@@ -1,0 +1,146 @@
+#greeting {
+ 
+    color: #0075aa;
+    background-color: none;
+    font-size:90px;
+    margin: 0.67em 0;
+    font-weight: 600;
+
+}
+
+
+
+/* ===================================================================
+ * # diamond
+ *
+ * ------------------------------------------------------------------- */
+ .s-diamond {
+    background-color: var(--color-bg);
+    padding-top: calc(7 * var(--space));
+    padding-bottom: 0;
+    position: relative;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## diamond photo
+ * ------------------------------------------------------------------- */
+.s-diamond__photo-block {
+    position: relative;
+}
+
+.s-diamond__photo {
+    background-image: url(../images/d_f.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: var(--vspace-0_5);
+    right: var(--gutter-lg);
+    left: var(--gutter-lg);
+    bottom: var(--vspace-1);
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## diamond process
+ * ------------------------------------------------------------------- */
+.s-diamond__process {
+    counter-reset: ctr;
+}
+
+.s-diamond__process h3 {
+    padding-left: 2.5em;
+    position: relative;
+}
+
+.s-diamond__process h3::before {
+    content: counter(ctr);
+    counter-increment: ctr;
+    display: block;
+    font-family: var(--font-2);
+    font-size: var(--text-size);
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    background-color: var(--color-1);
+    height: var(--vspace-1_5);
+    width: var(--vspace-1_5);
+    line-height: var(--vspace-1_5);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.s-diamond__process .item-process {
+    position: relative;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * diamond
+ * ------------------------------------------------------------------- */
+@media screen and (max-width: 1400px) {
+    .s-diamond::before {
+        right: 15vw;
+        left: auto;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .s-diamond {
+        padding-top: calc(5 * var(--space));
+    }
+    .s-diamond .horizontal-line {
+        right: calc(4.6rem);
+        left: auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .s-diamond__photo-block {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .s-diamond::before {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .s-diamond .horizontal-line {
+        right: calc(2.6rem);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .s-diamond {
+        padding-top: var(--vspace-4);
+    }
+    .s-diamond__process h3 {
+        padding-left: 3em;
+        margin-bottom: var(--vspace-0_75);
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .s-diamond .horizontal-line {
+        height: 16rem;
+        top: -2rem;
+        right: calc(1.8rem);
+    }
+}
+@media screen and (max-width: 800px) {
+    #greeting {
+        padding-bottom: 8vh;
+        font-size:48px;
+}
+@media screen and (max-width: 680px) {
+    #greeting {
+        padding-bottom: 8vh;
+        font-size:40px;
+}
